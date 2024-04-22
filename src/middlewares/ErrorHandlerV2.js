@@ -1,6 +1,6 @@
 const ErrorHandlerMiddleware = (err, req, res, next) => {
-    const errStatus = err.statusCode || 500;
-    const errMessage = err.message || "Internal Server Error";
+    var errStatus = err.statusCode || 500;
+      var  errMessage = err.message || "Internal Server Error";
     
     if (err.name === 'ValidationError') {
         errMessage = Object.values(err.errors)

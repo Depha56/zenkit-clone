@@ -36,7 +36,7 @@ export const getTasks = async (req, res, next) => {
 }
 
 export const addCheckListItem = asyncWrapper(async (req, res, next) => {
-    const taskId = req.query.id;
+    const taskId = req.params.id;
     const item = req.body;
 
     const taskBeforeUpdate = await TaskModel.findById(taskId);
@@ -81,7 +81,7 @@ export const updateCheckListItem = asyncWrapper(async (req, res, next) => {
 });
 
 export const updateTask = asyncWrapper(async (req, res, next) => {
-    const taskId = req.query.id;
+    const taskId = req.params.id;
     const updates = req.body;
 
     if (updates.tags) {

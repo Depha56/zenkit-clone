@@ -24,7 +24,7 @@ export const getTags = asyncWrapper(async (req, res, next) => {
 })
 
 export const updateTag = asyncWrapper(async (req, res, next) => {
-    const tagId = req.query.id;
+    const tagId = req.params.id;
     const updates = req.body;
 
     const updatedTag = await TagModel.findByIdAndUpdate(tagId, updates, { new: true });

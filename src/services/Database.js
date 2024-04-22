@@ -6,7 +6,10 @@ import configurations from "../configs/index.js";
 * @returns {Promise<void>} A promise that resolves when the connection is established, or rejects with an error.
 */
 export default function () {
-    mongoose.connect(configurations.MONGODB_CONNECTION_STRING.toString())
-        .then(() => console.log("Connected to MongoDB"))
-        .catch(err => console.log(err));
+    mongoose
+      .connect(
+        "mongodb+srv://dephaingabire:kOCWQ0bTDzsHb4hl@cluster0.pckglsb.mongodb.net/zenkit-projectV2"
+      )
+      .then(() => console.log("Connected to MongoDB"))
+      .catch((err) => console.log(err));
 }
